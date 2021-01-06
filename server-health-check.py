@@ -32,7 +32,7 @@ def gather_info():
     MEMTOTAL  = get_memtotal(get_memtotalb())
     SWAPFREE  = get_swapfree(get_swapfreeb())
     SWAPUSED  = get_swapused(get_swapusedb(get_swaptotalb(), get_swapfreeb()))
-    SWAPTOTAL = get_swaptotal(get_swaptotalb()) if get_swaptotal(get_swaptotalb()) != 0.0 else 1
+    SWAPTOTAL = get_swaptotal(get_swaptotalb()) if get_swaptotal(get_swaptotalb()) != "0.0" else 1
     ROOTFREE  = get_rootfree(get_rootfreeb())
     ROOTUSED  = get_rootused(get_rootusedb())
     ROOTTOTAL = get_roottotal(get_roottotalb())

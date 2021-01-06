@@ -39,7 +39,7 @@ def gather_info():
 
     MESSAGE  = f"CPU Load : {CPULOAD}\n"
     MESSAGE += f"Memory : Free: {MEMFREE} GB ({round(float(MEMFREE)/float(MEMTOTAL),2)*100}%), Used: {MEMUSED} GB ({round(float(MEMUSED)/float(MEMTOTAL),2)*100}%), Total: {MEMTOTAL} GB \n" 
-    MESSAGE += f"Swap : Free: {SWAPFREE} GB ({round(float(SWAPFREE)/float(SWAPTOTAL),2)*100}%), Used: {SWAPUSED} GB ({round(float(SWAPUSED)/float(SWAPTOTAL),2)*100}%), Total: {SWAPTOTAL} GB \n"
+    MESSAGE += f"Swap : Free: {SWAPFREE} GB ({round(float(SWAPFREE)/float(SWAPTOTAL),2)*100}%), Used: {SWAPUSED} GB ({round(float(SWAPUSED)/float(SWAPTOTAL),2)*100}%), Total: {SWAPTOTAL if SWAPTOTAL != 1 else 0} GB \n"
     MESSAGE += f"Root : Free:{ROOTFREE} GB ({get_rootfreeperc(get_rootusedperc())}%), Used: {ROOTUSED} GB ({get_rootusedperc()}%), Total: {ROOTTOTAL} GB \n"
     MESSAGE += f"Processes : {PROCESS}\n"
 

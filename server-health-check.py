@@ -53,7 +53,7 @@ def gather_info():
     }
 
 def exec_interval():
-  requests.post(SLACKBOT_WEBHOOK_DEBUG, data=gather_info())
+  requests.post(SLACKBOT_WEBHOOK, data=gather_info())
 
 
 # --------------------------------------------------------------------- #

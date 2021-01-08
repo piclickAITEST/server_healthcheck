@@ -17,9 +17,14 @@
 # --------------------------------------------------------------------- #
 # Include modules
 import subprocess
+import psutil
 
 # --------------------------------------------------------------------- #
 # get_cpuload
+
+def get_cpucore():
+    """ get_cpu core count """
+    return psutil.cpu_count()
 
 def get_cpuload():
     """ get_cpuload """

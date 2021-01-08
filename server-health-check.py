@@ -26,6 +26,7 @@ def gather_info():
     IPADDRESS = f"{get_network_ip()}/{get_external_ip()}"
     HOSTNAME  = get_hostname()
     CPULOAD   = get_cpuload()
+    CPUCORE   = get_cpucore()
     PROCESS   = get_processcount()
     MEMFREE   = get_memfree(get_memfreeb())
     MEMUSED   = get_memused(get_memusedb(get_memtotalb(), get_memfreeb()))
@@ -47,13 +48,23 @@ def gather_info():
         "DATE": DATE,
         "IPADDRESS": IPADDRESS,
         "HOSTNAME": HOSTNAME,
+        "CPUCORE": CPUCORE,
         "MESSAGE": MESSAGE
     }
 
 def exec_interval():
-  requests.post(SLACKBOT_WEBHOOK, data=gather_info())
+  requests.post(SLACKBOT_WEBHOOK_DEBUG, data=gather_info())
 
 
 # --------------------------------------------------------------------- #
 if __name__ == "__main__":
   exec_interval()
+
+
+# git clone https://github.com/piclickAITEST/server_healthcheck.git
+# sudo ln -s /usr/bin/python3 /usr/bin/python
+
+# crontab -e
+
+# PYTHON HEALTH CHECK
+# * * * * * python /home/piclick/server_healthcheck/server-health-check.py 2>&1
